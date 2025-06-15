@@ -1,0 +1,8 @@
+WIN_WIDTH = 626
+WIN_HEIGHT = 626
+
+
+# E
+ENTITY_SPEED = {
+    'bg': 10
+}
