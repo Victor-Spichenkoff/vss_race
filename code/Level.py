@@ -2,7 +2,7 @@ import random
 
 import pygame
 
-from code.Const import WIN_HEIGHT, WIN_HEIGHT
+from code.Const import WIN_HEIGHT, WIN_HEIGHT, COLOR_WHITE, COLOR_BLACK, EVENT_ENEMY, SPAW_TIME
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 
@@ -14,20 +14,28 @@ class Level:
         # self.player_score = player_score
         self.entity_list.extend(EntityFactory.get_entity('bg'))
 
-        # self.entity_list.append(EntityFactory.get_entity("Player1"))
+        self.entity_list.append(EntityFactory.get_entity("player"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
+        self.entity_list.append(EntityFactory.get_entity("car1"))
         # player = EntityFactory.get_entity("Player1")
         # player.score = player_score[0]
         # self.entity_list.append(player)
 
-        # pygame.time.set_timer(EVENT_ENEMY, SPAW_TIME)
+        pygame.time.set_timer(EVENT_ENEMY, SPAW_TIME)
         # pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP)
 
 
     def run(self):
-        # TODO:SOUND
+        # TODO: DECOMMENT SOUND
         # pygame.mixer_music.load(f'./assets/{self.name}.mp3')
         # pygame.mixer_music.set_volume(0.3)
-        # TODO: DECOMMENT
         # pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()  # manter taxa de atualização constante
         while True:
@@ -36,7 +44,7 @@ class Level:
             # EVENT
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
-                # ent.move()
+                ent.move()
                 # HUD
                 # if ent.name =="player":
                     # self.level_text(14, f'Player1 - Health: {ent.health} | score : {ent.score}', COLOR_GREEN, (10, 25))
@@ -46,9 +54,11 @@ class Level:
                 if event.type == pygame.QUIT:  # fechou, executo mesmo
                     pygame.quit()
                     quit()  # acabar com o pygame (init)
-                # if event.type == EVENT_ENEMY:
-                #     choice = random.choice(("Enemy1", "Enemy1", "Enemy2"))
-                #     self.entity_list.append(EntityFactory.get_entity(choice))
+                #     TODO:
+                if event.type == EVENT_ENEMY:
+                    choice = random.choice("car1")
+                    # choice = random.choice(("car1", "car2", "car3"))
+                    # self.entity_list.append(EntityFactory.get_entity(choice))
                 # if event.type == EVENT_TIMEOUT:
                 #     self.timeout -= 100
                 #     if self.timeout <= 0:
@@ -60,11 +70,9 @@ class Level:
                 #         return True
 
 
-            # TODO: TEXTS DEBUG, HELP
-            # self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
-            # self.level_text(14, f'fps: {clock.get_fps():.0f}', COLOR_WHITE, (10, WIN_HEIGHT - 35))
-            # self.level_text(14, f'entidades: {len(self.entity_list)}', COLOR_WHITE, (10, WIN_HEIGHT - 20))
 
+            self.level_text(14, f'fps: {clock.get_fps():.0f}', COLOR_BLACK, (10, WIN_HEIGHT - 35))
+            self.level_text(14, f'entidades: {len(self.entity_list)}', COLOR_BLACK, (10, WIN_HEIGHT - 20))
             pygame.display.flip()
 
             # COLLISIONS
