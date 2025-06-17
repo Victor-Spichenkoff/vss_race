@@ -3,6 +3,7 @@ import pygame
 from code.Car import Car
 from code.Entity import Entity
 from code.Const import WIN_HEIGHT
+import code.Global as Global
 from code.Player import Player
 
 
@@ -12,13 +13,12 @@ class EntityMediator:
     def __verify_collision_window_and_remove(ent: Entity, entity_list: list[Entity]):
         if isinstance(ent, Car):
             if ent.rect.top > WIN_HEIGHT:
+                Global.POINTS += 1
                 entity_list.remove(ent)
+
 
     @staticmethod
     def __verify_collision_entity(player: Entity, car: Entity):
-        # if not isinstance(player, (Car, Player)) or not isinstance(car, (Car, Player)) :
-        #     return False
-
         collision_margin_x = 30
         collision_margin_y = 5
         p = player.rect.inflate(-collision_margin_x, -collision_margin_y)

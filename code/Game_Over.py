@@ -1,7 +1,7 @@
 import pygame
 from pygame import K_BACKSPACE, K_RETURN, K_ESCAPE
 
-from code.Const import WIN_WIDTH, WIN_HEIGHT, COLOR_WHITE, COLOR_BLUE, COLOR_GREEN
+from code.Const import WIN_WIDTH, WIN_HEIGHT, COLOR_WHITE, COLOR_BLUE, COLOR_GREEN, COLOR_RED, SONG_DELAY
 
 
 class GameOver:
@@ -15,7 +15,7 @@ class GameOver:
 
 
     def get_action(self):
-        self.score_text(35, "Press any key to restart", COLOR_GREEN, (WIN_WIDTH / 2, 250))
+        self.score_text(30, "Press any key to restart (ESC)", COLOR_RED, (WIN_WIDTH / 2, 300))
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:  # fechou, executo mesmo
@@ -34,9 +34,10 @@ class GameOver:
         # TODO: DECOMMENT SOUND
         pygame.mixer_music.load(f'./assets/game_over.mp3')
         pygame.mixer_music.set_volume(0.3)
-        pygame.mixer_music.play()  # -1 === infinito
+        pygame.mixer_music.play(start=SONG_DELAY) # -1 === infinito
         while True:
-            self.score_text(50, "GAME OVER", COLOR_WHITE, (WIN_WIDTH / 2, 200))
+            self.score_text(50, "GAME OVER", COLOR_RED, (WIN_WIDTH / 2, 200))
+            self.score_text(35, f"POINTS: {self.points}", COLOR_WHITE, (WIN_WIDTH / 2, 250))
             stop = self.get_action()
             pygame.display.flip()
             if stop:

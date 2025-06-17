@@ -1,16 +1,13 @@
 # Now
-- Find an audio
-- Diagram
-- PONTOS
-
+- add a doc with my name
 # Order
-- [ ] Text and bg
-- [ ] bg move
-- [ ] sound
-- [ ] car
-- [ ] move car
-- [ ] move bots
-- [ ] end game screen
+- [X] Text and bg
+- [X] bg move
+- [X] sound
+- [X] car
+- [X] move car
+- [X] move bots
+- [X] end game screen
 
 # GLOBAL_VARIABLES
 ````angular2html

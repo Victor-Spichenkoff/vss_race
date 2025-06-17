@@ -23,7 +23,8 @@ class EntityFactory:
                     list_bg.append(Background('bg', (0, 0)))
                 return list_bg
             case "player":
-                return Player("player", (WIN_WIDTH / 2 - PLAYER_WIDTH / 2, WIN_HEIGHT - PLAYER_HEIGHT - 30))
+                choice_lane = random.choice((FINAL_POSITION_LEFT, ROAD_LIMIT_LANE_2))
+                return Player("player", (choice_lane, WIN_HEIGHT - PLAYER_HEIGHT - 30))
             case "car1":
                 return Car("car1", (get_car_position(), 0 - BOT_WIDTH))
             case "car3":
