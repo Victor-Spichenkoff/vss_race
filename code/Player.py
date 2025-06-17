@@ -16,7 +16,7 @@ class Player(Entity):
         if pressed_key[pygame.K_UP] and self.rect.top > 0:
             self.rect.centery -= ENTITY_SPEED[self.name]
         if pressed_key[pygame.K_DOWN] and self.rect.bottom < WIN_HEIGHT:
-            self.rect.centery += ENTITY_SPEED[self.name]
+            self.rect.centery += ENTITY_SPEED[self.name] * 1.2
         if pressed_key[pygame.K_LEFT] and self.rect.left > ROAD_LIMIT_LEFT:
             if self.rect.centerx > FINAL_POSITION_LEFT:
                 self.going_to = "left"

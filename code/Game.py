@@ -15,4 +15,10 @@ class Game:
             level = Level(self.window)
             level_return = level.run()
 
-            quit()
+            # TODO:
+            # if level_return:
+            #     stop = get_final_screen() # usa esc para fechar
+            #     if stop:
+            #         break
+
+        quit()

@@ -1,5 +1,5 @@
 import pygame
-
+import code.Global as Global
 
 # C
 COLOR_WHITE = (255, 255, 255)
@@ -29,10 +29,12 @@ FINAL_POSITION_RIGHT = 256
 ENTITY_SPEED = {
     'bg': 6,
     'player': 4,
-    'car1': 2
+    'car1': 2,
+    'car3': 2.75
 }
 
 EVENT_ENEMY = pygame.USEREVENT + 1
+EVENT_DIFFICULT_UP = pygame.USEREVENT + 2
 
 # P
 PLAYER_KEY_UP = pygame.K_UP
@@ -45,8 +47,6 @@ PLAYER_KEY_RIGHT = pygame.K_RIGHT
 PLAYER_KEY_SHOOT = pygame.K_RCTRL
 
 
-
-
-
-#
-SPAW_TIME = 500
+# GAME LOGIC
+DIFFICULT = 1
+SPAW_TIME = 2000

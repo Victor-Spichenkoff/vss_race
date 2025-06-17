@@ -25,9 +25,9 @@ class EntityFactory:
             case "player":
                 return Player("player", (WIN_WIDTH / 2 - PLAYER_WIDTH / 2, WIN_HEIGHT - PLAYER_HEIGHT - 30))
             case "car1":
-                return Car("car1", (get_car_position(), 0))
-            # case "car1":
-            #     return Enemy("Enemy1", (WIN_WIDTH + 10, random.randint(40, WIN_HEIGHT -40)))
+                return Car("car1", (get_car_position(), 0 - BOT_WIDTH))
+            case "car3":
+                return Car("car3", (get_car_position(), -BOT_WIDTH))
 
         return None
 

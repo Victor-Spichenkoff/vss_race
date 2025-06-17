@@ -1,4 +1,4 @@
-from code.Const import WIN_HEIGHT, ENTITY_SPEED
+import code.Const as Const
 from code.Entity import Entity
 
 class Background(Entity):
@@ -9,6 +9,6 @@ class Background(Entity):
         super().__init__(name, position)
 
     def move(self):
-        self.rect.centery += ENTITY_SPEED[self.name]
-        if self.rect.top >= WIN_HEIGHT:
+        self.rect.centery += Const.ENTITY_SPEED[self.name]
+        if self.rect.top >= Const.WIN_HEIGHT:
             self.rect.bottom = 0
