@@ -1,3 +1,5 @@
+import pygame
+
 import code.Const as Const
 
 from code.Const import WIN_HEIGHT, ENTITY_SPEED, WIN_WIDTH, ROAD_LIMIT_Y, ROAD_LIMIT_RIGHT, ROAD_LIMIT_LEFT

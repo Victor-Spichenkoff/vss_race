@@ -1,6 +1,7 @@
 import pygame
 
 from code.Const import WIN_WIDTH, WIN_HEIGHT
+from code.Game_Over import GameOver
 from code.Level import Level
 
 
@@ -14,11 +15,8 @@ class Game:
             # CREATE LEVEL
             level = Level(self.window)
             level_return = level.run()
-
             # TODO:
-            # if level_return:
-            #     stop = get_final_screen() # usa esc para fechar
-            #     if stop:
-            #         break
+            game_over = GameOver(self.window, level_return)
+            stop = game_over.show() # usa esc para fechar
 
         quit()

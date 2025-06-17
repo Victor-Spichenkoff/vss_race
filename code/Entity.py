@@ -11,10 +11,10 @@ class Entity(ABC):
     def __init__(self, name, position: tuple, ):
         self.name = name
         self.surf = pygame.image.load("./assets/" + name + ".png").convert_alpha()
-        self.rect = self.surf.get_rect(left=position[0], top=position[1])
+        # self.rect = self.surf.get_rect(left=position[0], top=position[1])
+        self.rect = self.surf.get_rect(topleft=(position[0], position[1]))
         self.speed = 10
         self.last_damage = "None"
-
 
     @abstractmethod
     def move(self):

@@ -4,7 +4,8 @@ import code.Global as Global
 # C
 COLOR_WHITE = (255, 255, 255)
 COLOR_BLACK = (0, 0, 0)
-
+COLOR_BLUE = (64, 128, 255)
+COLOR_GREEN = (32, 255, 128)
 
 # SPACE
 WIN_WIDTH = 400

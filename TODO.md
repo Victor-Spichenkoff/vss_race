@@ -1,6 +1,7 @@
 # Now
 - Find an audio
 - Diagram
+- PONTOS
 
 # Order
 - [ ] Text and bg

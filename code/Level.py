@@ -22,6 +22,7 @@ class Level:
         # player = EntityFactory.get_entity("Player1")
         # player.score = player_score[0]
         # self.entity_list.append(player)
+        self.points = 0
 
         pygame.time.set_timer(EVENT_ENEMY, Const.SPAW_TIME)
         pygame.time.set_timer(EVENT_DIFFICULT_UP, 1000, loops=4)
@@ -72,9 +73,7 @@ class Level:
             # COLLISIONS
             has_collision = EntityMediator.verify_collision(self.entity_list)
             if has_collision:
-                while True:
-                    pass
-                return True
+                return self.points
 
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
