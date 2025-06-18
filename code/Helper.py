@@ -20,6 +20,8 @@ def reset_global():
     Const.DIFFICULT = 1
     Const.SPAW_TIME = 2200
     Global.POINTS = 0
+    Const.ENTITY_SPEED["player"] = 4
+    Const.ENTITY_SPEED["bg"] = 6
 
 
 def clear_keys():
